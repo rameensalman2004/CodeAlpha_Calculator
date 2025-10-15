@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header-controls">
+            <h1 class="calculator-title">Scientific Calculator</h1>
+            <div class="theme-selector">
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="default">Default Blue</option>
+                    <option value="dark">Dark Mode</option>
+                    <option value="light">Light Mode</option>
+                    <option value="green">Green Theme</option>
+                    <option value="purple">Purple Theme</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="calculator">
+            <div class="calculator-main">
+                <div class="display-container">
+                    <div class="expression" id="expression"></div>
+                    <input type="text" class="display" id="display" readonly>
+                </div>
+                
+                <div class="buttons">
+                    <!-- First Row -->
+                    <button class="function" data-value="sin(" data-key="s">sin</button>
+                    <button class="function" data-value="cos(" data-key="c">cos</button>
+                    <button class="function" data-value="tan(" data-key="t">tan</button>
+                    <button class="function" data-value="log(" data-key="g">log</button>
+                    <button class="function" data-value="ln(" data-key="l">ln</button>
+                    
+                    <!-- Second Row -->
+                    <button class="function" data-value="√(" data-key="r">√</button>
+                    <button class="function" data-value="(" data-key="(">(</button>
+                    <button class="function" data-value=")" data-key=")">)</button>
+                    <button class="function" data-value="^" data-key="^">^</button>
+                    <button class="clear" data-action="clear" data-key="Escape">C</button>
+                    
+                    <!-- Third Row -->
+                    <button class="memory" data-action="memoryRecall" data-key="F9">MR</button>
+                    <button class="memory" data-action="memoryClear" data-key="F10">MC</button>
+                    <button class="memory" data-action="memoryAdd" data-key="F11">M+</button>
+                    <button class="number" data-value="7" data-key="7">7</button>
+                    <button class="number" data-value="8" data-key="8">8</button>
+                    
+                    <!-- Fourth Row -->
+                    <button class="function" data-value="π" data-key="p">π</button>
+                    <button class="function" data-value="e" data-key="e">e</button>
+                    <button class="function" data-action="factorial" data-key="!">x!</button>
+                    <button class="number" data-value="9" data-key="9">9</button>
+                    <button class="number" data-value="4" data-key="4">4</button>
+                    
+                    <!-- Fifth Row -->
+                    <button class="function" data-action="reciprocal" data-key="F1">1/x</button>
+                    <button class="function" data-value="abs(" data-key="a">|x|</button>
+                    <button class="function" data-action="square" data-key="F2">x²</button>
+                    <button class="number" data-value="5" data-key="5">5</button>
+                    <button class="number" data-value="6" data-key="6">6</button>
+                    
+                    <!-- Sixth Row -->
+                    <button class="operator" data-value="/" data-key="/">/</button>
+                    <button class="operator" data-value="*" data-key="*">×</button>
+                    <button class="operator" data-value="-" data-key="-">-</button>
+                    <button class="number" data-value="1" data-key="1">1</button>
+                    <button class="number" data-value="2" data-key="2">2</button>
+                    
+                    <!-- Seventh Row -->
+                    <button class="operator" data-value="+" data-key="+">+</button>
+                    <button class="number zero" data-value="0" data-key="0">0</button>
+                    <button class="decimal" data-value="." data-key=".">.</button>
+                    <button class="number" data-value="3" data-key="3">3</button>
+                    <button class="equals" data-action="calculate" data-key="Enter">=</button>
+                </div>
+            </div>
+            
+            <div class="calculator-sidebar">
+                <div class="history">
+                    <h3>History</h3>
+                    <div id="history-list"></div>
+                    <button class="clear-history" data-action="clearHistory">Clear History</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Keyboard Navigation:</strong> Arrow keys to navigate, Enter/Space to click</p>
+            <p><strong>Direct Keys:</strong> Numbers (0-9), Operators (+, -, *, /), Enter (=), Escape (C)</p>
+            <p><strong>Functions:</strong> s=sin, c=cos, t=tan, g=log, l=ln, r=√, p=π, e=e, a=abs</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
